@@ -1,13 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { start as startWebsocket } from './websocket'
-import { start as startView } from './view'
 import Selector from './selector'
-
-export function start(rootNode: Element) {
-    startWebsocket()
-    startView(rootNode)
-}
 
 type Config = {
     [x: string]: JSX.Element
@@ -22,5 +16,7 @@ export function initialize(configGenerator: () => Config) {
 
         document.body.appendChild(rootNode)
         render(<Selector boards={config} />, rootNode)
+
+        startWebsocket()
     })
 }
