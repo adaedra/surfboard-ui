@@ -1,7 +1,7 @@
-import { ReplaySubject } from 'rxjs'
+import { BehaviorSubject } from 'rxjs'
 import { webSocket } from 'rxjs/webSocket'
 
-let dispatcher = new ReplaySubject()
+let dispatcher = new BehaviorSubject({})
 
 export function start() {
     webSocket('ws://localhost:1337').subscribe(dispatcher)
