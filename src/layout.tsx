@@ -35,6 +35,6 @@ export const Row = React.memo(
 
 export const Column = React.memo(
     withDisplayName('Layout.Column', ({ children }) => (
-        <Layout direction={Direction.Horizontal}>{children}</Layout>
+        <Layout direction={Direction.Vertical}>{children}</Layout>
     ))
 )
