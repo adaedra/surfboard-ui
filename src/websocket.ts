@@ -10,10 +10,13 @@ export function start() {
 
 dispatcher.subscribe(value => console.log('dispatcher', value))
 
-export function subscribeTo<T>(key: string): Observable<{ [key: string]: T }> {
+export function subscribeTo<T>(
+    key: string,
+    keyName: string = key
+): Observable<{ [key: string]: T }> {
     return dispatcher.pipe(
         pluck(key),
-        map((value: T) => ({ [key]: value }))
+        map((value: T) => ({ [keyName]: value }))
     )
 }
 

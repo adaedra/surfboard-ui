@@ -4,7 +4,7 @@ import { Observable, Subscription } from 'rxjs'
 abstract class Widget<P, S> extends React.Component<P, S> {
     subscription?: Subscription
 
-    constructor(props) {
+    constructor(props: P) {
         super(props)
         this.state = {} as any
     }
