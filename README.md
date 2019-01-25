@@ -42,7 +42,7 @@ and setup a basic widget and a base dashboard:
 ```jsx
 import React from 'react'
 import { map } from 'rxjs/operators'
-import { initialize, subscribeTo, Widget, Frame, Layout } from '@surfboard/core'
+import { initialize, subscribeTo, Widget, Frame, Layout } from '@surfboard/ui'
 
 // Create a basic widget
 class Clock extends Widget {
